@@ -851,6 +851,106 @@
             box-shadow: 0 0 30px rgba(91, 255, 196, 0.4);
         }
 
+        /* Dual year comparison bars */
+        .row-bars-dual {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .row-bar-year {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .row-bar-year .year-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--ant-dark-gray);
+            min-width: 32px;
+        }
+
+        .row-bar-container-dual {
+            flex: 1;
+            height: 12px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .row-bar-2024 {
+            height: 100%;
+            background: linear-gradient(90deg, rgba(174, 177, 183, 0.5), rgba(174, 177, 183, 0.7));
+            border-radius: 3px;
+        }
+
+        .row-bar-2025 {
+            height: 100%;
+            background: linear-gradient(90deg, rgba(91, 255, 196, 0.6), rgba(91, 255, 196, 0.8));
+            border-radius: 3px;
+        }
+
+        .chart-row:hover .row-bar-2025 {
+            background: linear-gradient(90deg, var(--ant-green), #7fffd4);
+            box-shadow: 0 0 10px rgba(91, 255, 196, 0.3);
+        }
+
+        /* Chart legend */
+        .chart-legend {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--ant-dark-gray);
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 8px;
+            border-radius: 2px;
+        }
+
+        .legend-color.color-2024 {
+            background: rgba(174, 177, 183, 0.6);
+        }
+
+        .legend-color.color-2025 {
+            background: var(--ant-green);
+        }
+
+        /* Chart analysis */
+        .chart-analysis {
+            margin-top: 32px;
+            padding: 24px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            border-left: 3px solid var(--ant-green);
+        }
+
+        .chart-analysis-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ant-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .chart-analysis p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--ant-light-gray);
+            margin: 0;
+        }
+
 
         /* Strengths - WOW */
         .strengths-section {
@@ -1438,68 +1538,103 @@
                 </div>
                 <!-- Monthly chart for desktop -->
                 <div class="revenue-chart monthly-chart">
-                    <div class="chart-title">Měsíční přehled 2025 (uhrazeno + vystaveno)</div>
+                    <div class="chart-title">Měsíční porovnání 2024 vs 2025 (uhrazeno)</div>
+                    <div class="chart-legend">
+                        <div class="legend-item"><span class="legend-color color-2024"></span> 2024</div>
+                        <div class="legend-item"><span class="legend-color color-2025"></span> 2025</div>
+                    </div>
                     <div class="chart-rows">
                         <div class="chart-row">
                             <span class="row-month">Led</span>
-                            <span class="row-value">394 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 32%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 100%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 33%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Úno</span>
-                            <span class="row-value">412 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 34%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 49%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 34%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Bře</span>
-                            <span class="row-value">353 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 29%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 30%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 29%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Dub</span>
-                            <span class="row-value">437 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 36%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 41%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 36%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Kvě</span>
-                            <span class="row-value">415 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 34%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 27%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 35%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Čvn</span>
-                            <span class="row-value">422 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 35%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 62%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 35%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Čvc</span>
-                            <span class="row-value">291 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 24%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 30%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 24%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Srp</span>
-                            <span class="row-value">374 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 31%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 29%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 31%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Zář</span>
-                            <span class="row-value">329 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 27%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 47%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 27%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Říj</span>
-                            <span class="row-value">441 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 36%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 40%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 37%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row">
                             <span class="row-month">Lis</span>
-                            <span class="row-value">724 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 60%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 56%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 60%"></div></div></div>
+                            </div>
                         </div>
                         <div class="chart-row highlight">
                             <span class="row-month">Pro</span>
-                            <span class="row-value">1 214 tis.</span>
-                            <div class="row-bar-container"><div class="row-bar" style="width: 100%"></div></div>
+                            <div class="row-bars-dual">
+                                <div class="row-bar-year"><span class="year-label">2024</span><div class="row-bar-container-dual"><div class="row-bar-2024" style="width: 42%"></div></div></div>
+                                <div class="row-bar-year"><span class="year-label">2025</span><div class="row-bar-container-dual"><div class="row-bar-2025" style="width: 100%"></div></div></div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="chart-analysis">
+                        <div class="chart-analysis-title">Analytický komentář</div>
+                        <p>
+                            Data ukazují zásadní změnu v sezónnosti fakturace. V roce 2024 byl silný start roku (leden 1,2 M) následovaný postupným útlumem. V roce 2025 je situace opačná — slabší první polovinu roku (průměr 406 tis./měsíc) vystřídal výrazný finish ve Q4. Prosinec 2025 (1,21 M) je nejvyšší měsíc za oba roky kombinovaně.<br><br>
+                            Klíčové zjištění: Celková fakturace klesla o 13 %, ale struktura se změnila. Méně konzistentní výkon během roku, ale silnější uzávěrky velkých dealů v závěru. To odpovídá posunu k větším projektům (+401 % průměrná hodnota dealu) s delším obchodním cyklem.
+                        </p>
                     </div>
                 </div>
                 <!-- Quarterly chart for mobile -->
